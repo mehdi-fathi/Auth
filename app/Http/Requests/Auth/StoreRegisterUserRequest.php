@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests\Auth;
 
+use App\Helpers\Rules\PostRuleHelper;
 use Illuminate\Foundation\Http\FormRequest;
 
 class StoreRegisterUserRequest extends FormRequest
