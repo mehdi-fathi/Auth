@@ -27,6 +27,7 @@ class RegisterController extends Controller
         $user = $this->UserService->create($request->validated());
         if (!empty($user)) {
             $this->UserService->loginByUser($user);
+            return redirect()->intended(route('dashboard.index'));
         }
     }
 

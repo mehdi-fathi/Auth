@@ -18,6 +18,10 @@ class LoginController extends Controller
             return redirect()->intended(route('dashboard.index'));
         }
 
-        return back();
+        return back()->withErrors(
+            [
+                'email' => 'These credentials do not match our records.'
+            ]
+        );;
     }
 }

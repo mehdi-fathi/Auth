@@ -13,7 +13,7 @@ Route::get('/', function () {
 Route::group(['middleware' => 'guest', 'prefix' => 'auth'], function () {
     Route::get('/register', [RegisterController::class, 'register'])->name('auth.register');
     Route::post('/register', [RegisterController::class, 'store'])->name('auth.registerSave');
-    Route::get('/login', [LoginController::class, 'login'])->name('auth.login');
+    Route::get('/login', [LoginController::class, 'login'])->name('login');
     Route::post('/login', [LoginController::class, 'loginPost'])->name('auth.loginPost');
 });
 Route::group(['middleware' => 'auth', 'prefix' => 'dashboard'], function () {

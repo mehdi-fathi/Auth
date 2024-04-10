@@ -89,11 +89,19 @@
         </div>
     </form>
     <p>Not registered?
-        <a href="#"
+        <a href="{{ route('auth.register') }}"
            style="text-decoration: none;">
             Create an account
         </a>
     </p>
+
+    @if ($errors->any())
+        <p class="text-center font-semibold text-danger my-3">
+            @foreach ($errors->all() as $error)
+                {{ $error }}<br/>
+            @endforeach
+        </p>
+    @endif
 </div>
 </body>
 

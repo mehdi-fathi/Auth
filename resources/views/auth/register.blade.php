@@ -101,7 +101,7 @@
         <input
             type="password"
             id="repassword"
-            name="repassword"
+            name="password_confirmation"
             required
         />
 
@@ -111,11 +111,9 @@
 
         @if ($errors->any())
             <p class="text-center font-semibold text-danger my-3">
-                @if ($errors->has('email'))
-                    {{ $errors->first('email') }}
-                @else
-                    {{ $errors->first('name') }}
-                @endif
+                @foreach ($errors->all() as $error)
+                    {{ $error }}<br/>
+                @endforeach
             </p>
         @endif
     </form>
