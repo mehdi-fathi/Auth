@@ -14,7 +14,7 @@ class LoginController extends Controller
 
     public function loginPost(LoginRequest $request)
     {
-        if (auth()->attempt($request->validated())) {
+        if ($this->UserService->login($request->validated())) {
             return redirect()->intended(route('dashboard.index'));
         }
 
