@@ -4,8 +4,12 @@ namespace App\Logic;
 
 use App\Repositories\User\UserRepository;
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 
 
+/**
+ *
+ */
 class UserService
 {
     /**
@@ -17,16 +21,33 @@ class UserService
         $this->userRepo = $user;
     }
 
+    /**
+     * @param array $data
+     * @return \App\Models\User
+     */
     public function create(array $data): User
     {
         return $this->userRepo->create($data);
     }
 
+    /**
+     * @param array $data
+     * @return bool
+     */
     public function login(array $data)
     {
         if (auth()->attempt($data)) {
             return true;
         }
         return false;
+    }
+
+    /**
+     * @param \App\Models\User $user
+     * @return void
+     */
+    public function loginByUser(User $user)
+    {
+        Auth::login($user);
     }
 }

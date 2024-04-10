@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>GeeksforGeeks Registration</title>
+    <title>Login</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -63,7 +63,6 @@
 
 <body>
 <div class="main">
-    <h1>GeeksforGeeks</h1>
     <h3>Enter your login credentials</h3>
     <form method="post" action="{{ route('auth.loginPost') }}">
         @csrf

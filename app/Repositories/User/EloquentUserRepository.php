@@ -24,9 +24,9 @@ class EloquentUserRepository implements UserRepository
 
     /**
      * @param array $data
-     * @return void
+     * @return User
      */
-    public function create(array $data)
+    public function create(array $data): User
     {
         return $this->model->create($data);
     }
