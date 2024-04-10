@@ -34,12 +34,9 @@ class UserService
      * @param array $data
      * @return bool
      */
-    public function login(array $data)
+    public function login(array $data): bool
     {
-        if (auth()->attempt($data)) {
-            return true;
-        }
-        return false;
+        return auth()->attempt($data);
     }
 
     /**
